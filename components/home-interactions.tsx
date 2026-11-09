@@ -58,8 +58,9 @@ export default function HomeInteractions(){
   const portraitParent=aboutImage?.parentElement;
   if(aboutImage&&portraitParent){
    aboutImage.classList.add('ref-portrait-default');
-   ['50% 18%','50% 27%','50% 37%'].forEach((position,index)=>{
-    const image=aboutImage.cloneNode() as HTMLImageElement;image.alt='';image.setAttribute('aria-hidden','true');image.removeAttribute('fetchpriority');image.classList.remove('ref-portrait-default');image.classList.add('ref-education-portrait');image.style.objectPosition=position;image.dataset.educationPortrait=String(index);portraitParent.appendChild(image);portraitLayers.push(image);
+   // Education order: B.Tech, Class XII, Class X.
+   [{src:'/images/education-btech.webp',position:'60% 40%'},{src:'/images/education-class12.webp',position:'60% 40%'},{src:'/images/education-class10.webp',position:'60% 40%'}].forEach(({src,position},index)=>{
+    const image=aboutImage.cloneNode() as HTMLImageElement;image.removeAttribute('srcset');image.removeAttribute('sizes');image.src=src;image.alt='';image.setAttribute('aria-hidden','true');image.removeAttribute('fetchpriority');image.classList.remove('ref-portrait-default');image.classList.add('ref-education-portrait');image.style.objectPosition=position;image.dataset.educationPortrait=String(index);portraitParent.appendChild(image);portraitLayers.push(image);
    });
    cleanups.push(()=>{portraitLayers.forEach(el=>el.remove());aboutImage.classList.remove('ref-portrait-default');portraitParent.classList.remove('ref-portrait-selected')});
   }

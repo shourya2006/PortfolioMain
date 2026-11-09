@@ -1,6 +1,7 @@
 'use client';
 import {useCallback,useEffect,useId,useRef,useState,type FormEvent,type ReactNode} from 'react';
 import {ArrowUpRight} from './reference-header';
+import {contactEmail} from '@/lib/utils';
 
 const empty={name:'',email:'',subject:'',message:'',website:''};
 type FormValues=typeof empty;
@@ -64,7 +65,7 @@ export default function ContactModalProvider({children}:{children:ReactNode}){
     <span className="section-label">Contact</span><h2 className="ref-contact-title" id={`${id}-title`}>Let’s <span>talk.</span></h2><p className="ref-contact-intro">Have a project, a question, or a good problem? Send me a message.</p>
     <form onSubmit={submit} className="ref-contact-form">
      <fieldset disabled={status==='sending'}><div className="ref-contact-field-grid"><label htmlFor={`${id}-name`}>Your name<input ref={firstField} id={`${id}-name`} name="name" autoComplete="name" value={values.name} onChange={e=>update('name',e.target.value)} placeholder="What should I call you?" required minLength={2} maxLength={100}/></label><label htmlFor={`${id}-email`}>Email address<input id={`${id}-email`} name="email" type="email" autoComplete="email" value={values.email} onChange={e=>update('email',e.target.value)} placeholder="you@example.com" required maxLength={254}/></label></div><label htmlFor={`${id}-subject`}>What’s on your mind?<input id={`${id}-subject`} name="subject" value={values.subject} onChange={e=>update('subject',e.target.value)} placeholder="A project, an opportunity, a conversation…" required maxLength={160}/></label><label htmlFor={`${id}-message`}>Your message<textarea id={`${id}-message`} name="message" value={values.message} onChange={e=>update('message',e.target.value)} placeholder="Tell me a little about it." rows={4} required minLength={10} maxLength={5000}/></label><div className="ref-contact-message-count" aria-hidden="true">{values.message.length.toLocaleString()} / 5,000</div><div className="ref-contact-honeypot" aria-hidden="true"><label htmlFor={`${id}-website`}>Website<input id={`${id}-website`} name="website" tabIndex={-1} autoComplete="off" value={values.website} onChange={e=>update('website',e.target.value)}/></label></div></fieldset>
-     {status==='error'&&<div className="ref-contact-error" role="alert"><p>{error}</p><a href="https://www.linkedin.com/in/shourya-bafna-80a670215/" target="_blank" rel="noreferrer">You can also reach me on LinkedIn ↗</a></div>}
+     {status==='error'&&<div className="ref-contact-error" role="alert"><p>{error}</p><a href={`mailto:${contactEmail}?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(`${values.message}\n\n— ${values.name} (${values.email})`)}`}>Email it to me instead ({contactEmail}) ↗</a> <a href="https://www.linkedin.com/in/shourya-bafna-80a670215/" target="_blank" rel="noreferrer">or reach me on LinkedIn ↗</a></div>}
      <div className="ref-contact-submit-row"><p>Your details are used to reply<br/>to this conversation.</p><button type="submit" className="btn-pill-primary ref-contact-submit" disabled={status==='sending'}>{status==='sending'?<><span className="ref-contact-spinner" aria-hidden="true"/>Sending…</>:<>Send message <ArrowUpRight/></>}</button></div><p className="ref-contact-sending-status" role="status" aria-live="polite">{status==='sending'?'Sending your message…':''}</p>
     </form>
    </>}

@@ -18,5 +18,6 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
 };
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
-  return <html lang="en" className="__variable_e29fa9"><head><link rel="preload" href="/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body><IntroPreloader/><PageTransitions><ContactModalProvider>{children}</ContactModalProvider></PageTransitions></body></html>;
+  // The inline script hides the intro before first paint for repeat visits in the same tab session.
+  return <html lang="en" className="__variable_e29fa9" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html:"try{if(sessionStorage.getItem('intro-seen'))document.documentElement.dataset.introSeen=''}catch(e){}"}}/><link rel="preload" href="/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body><IntroPreloader/><PageTransitions><ContactModalProvider>{children}</ContactModalProvider></PageTransitions></body></html>;
 }

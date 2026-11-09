@@ -6,3 +6,5 @@
 .ref-sticky-header{height:64px}.ref-sticky-header>.site-header{position:relative}
 @media(max-width:767px){.ref-sticky-header{height:56px}}
 @media(prefers-reduced-motion:reduce){.ref-tech-viewport{overflow-x:auto;scrollbar-width:thin}.ref-tech-strip[aria-hidden=true]{display:none}}
+
+html[data-intro-seen] .ref-intro{display:none}

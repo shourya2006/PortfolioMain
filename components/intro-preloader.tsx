@@ -31,8 +31,10 @@ export default function IntroPreloader(){
  const phaseRef=useRef<Phase>('count');
  useLayoutEffect(()=>{
   if(!active)return;
-  const controller=new AbortController();const {signal}=controller;
   const root=document.documentElement,body=document.body;
+  // The inline script in layout.tsx sets this for visitors who already watched the intro this session.
+  if(root.dataset.introSeen!==undefined){setActive(false);return}
+  const controller=new AbortController();const {signal}=controller;
   const content=document.querySelector<HTMLElement>('[data-portfolio-content]');
   const previous={rootOverflow:root.style.overflow,bodyOverflow:body.style.overflow,restoration:history.scrollRestoration,inert:content?.inert??false};
   const desktop=window.matchMedia('(min-width:768px)').matches;
@@ -42,7 +44,7 @@ export default function IntroPreloader(){
   root.dataset.introState='loading';root.style.overflow='hidden';body.style.overflow='hidden';history.scrollRestoration='manual';window.scrollTo(0,0);if(content)content.inert=true;
   const initialHash=window.location.hash,initialPath=window.location.pathname;
   let unlocked=false;
-  const unlock=(restoreHash=true)=>{if(unlocked)return;unlocked=true;root.style.overflow=previous.rootOverflow;body.style.overflow=previous.bodyOverflow;history.scrollRestoration=previous.restoration;if(content)content.inert=previous.inert;root.dataset.introState='ready';window.dispatchEvent(new Event('portfolio:intro-complete'));if(restoreHash&&initialHash&&window.location.pathname===initialPath&&window.location.hash===initialHash){let id=initialHash.slice(1);try{id=decodeURIComponent(id)}catch{}const target=document.getElementById(id);if(target)window.scrollTo({top:Math.max(0,target.getBoundingClientRect().top+window.scrollY-80),behavior:'instant'})}};
+  const unlock=(restoreHash=true)=>{if(unlocked)return;unlocked=true;try{sessionStorage.setItem('intro-seen','1')}catch{}root.style.overflow=previous.rootOverflow;body.style.overflow=previous.bodyOverflow;history.scrollRestoration=previous.restoration;if(content)content.inert=previous.inert;root.dataset.introState='ready';window.dispatchEvent(new Event('portfolio:intro-complete'));if(restoreHash&&initialHash&&window.location.pathname===initialPath&&window.location.hash===initialHash){let id=initialHash.slice(1);try{id=decodeURIComponent(id)}catch{}const target=document.getElementById(id);if(target)window.scrollTo({top:Math.max(0,target.getBoundingClientRect().top+window.scrollY-80),behavior:'instant'})}};
   const change=(p:Phase)=>{phaseRef.current=p;setPhase(p)};
   const imageReady=new Promise<void>(resolve=>{const image=new Image();const done=()=>{image.onload=null;image.onerror=null;signal.removeEventListener('abort',done);resolve()};image.onload=done;image.onerror=done;signal.addEventListener('abort',done,{once:true});image.src='/images/shourya-hero.png';if(image.complete)done()});
   const ready=Promise.race([Promise.all([imageReady,document.fonts?.ready??Promise.resolve()]),wait(2500,signal)]);

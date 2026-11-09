@@ -29,4 +29,4 @@ export function CopyLink({url,label='Copy link',iconOnly=false,className=''}:Cop
   {status==='failed'&&<input ref={input} className="ref-copy-fallback" aria-label="Link to copy manually" value={fallback} readOnly onFocus={event=>event.currentTarget.select()}/>}
  </div>;
 }
-export default function ProjectShare(){return <div className="ref-project-share"><span className="font-mono text-xs text-muted-foreground">Share</span><CopyLink label="Copy project link" iconOnly/></div>}
+export default function ProjectShare({url}:{url?:string}){return <div className="ref-project-share"><span className="font-mono text-xs text-muted-foreground">Share</span><CopyLink url={url} label="Copy project link" iconOnly/></div>}

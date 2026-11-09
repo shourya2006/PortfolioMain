@@ -10,6 +10,7 @@ import './account-cards.css';
 import ContactModalProvider from '@/components/contact-modal';
 import IntroPreloader from '@/components/intro-preloader';
 import PageTransitions from '@/components/page-transitions';
+import ProjectModalProvider from '@/components/project-modal';
 export const metadata: Metadata = {
   metadataBase: new URL('https://shourya-bafna-portfolio.melodicllama2.chatgpt.site'),
   title: { default: 'Shourya Bafna — Software & AI Engineer', template: '%s · Shourya Bafna' },
@@ -19,5 +20,5 @@ export const metadata: Metadata = {
 };
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   // The inline script hides the intro before first paint for repeat visits in the same tab session.
-  return <html lang="en" className="__variable_e29fa9" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html:"try{if(sessionStorage.getItem('intro-seen'))document.documentElement.dataset.introSeen=''}catch(e){}"}}/><link rel="preload" href="/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body><IntroPreloader/><PageTransitions><ContactModalProvider>{children}</ContactModalProvider></PageTransitions></body></html>;
+  return <html lang="en" className="__variable_e29fa9" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html:"try{if(sessionStorage.getItem('intro-seen'))document.documentElement.dataset.introSeen=''}catch(e){}"}}/><link rel="preload" href="/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body><IntroPreloader/><PageTransitions><ContactModalProvider><ProjectModalProvider>{children}</ProjectModalProvider></ContactModalProvider></PageTransitions></body></html>;
 }

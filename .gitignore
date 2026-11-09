@@ -43,3 +43,6 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+
+# Keep the documented variable names, never local secret values.
+!.env.example

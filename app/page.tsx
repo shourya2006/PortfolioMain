@@ -4,6 +4,7 @@ import ReferenceFooter from '@/components/reference-footer';
 import HomeInteractions from '@/components/home-interactions';
 import HomeWork from '@/components/home-work';
 import RollingText from '@/components/rolling-text';
+import AccountCards from '@/components/account-cards';
 import {homeSections} from '@/lib/home-sections';
 
 function HeroTitle(){return <><span className="block">Building</span><span className="block">Full-Stack</span><span className="block">AI Systems.</span></>}
@@ -25,11 +26,7 @@ export default function Home(){
   <div dangerouslySetInnerHTML={{__html:homeSections.about}}/>
   <HomeWork/>
   <div dangerouslySetInnerHTML={{__html:homeSections.experience}}/>
-  <section className="section-dark section-y section-gutter" data-header-theme="dark"><div className="content-max"><span className="section-label mb-4">Beyond the build</span><h2 className="type-section section-heading-spacing" data-ref-reveal>Problem-solving <span className="opacity-50">habit</span></h2><div className="ref-discover-grid">{[
-   {name:'LeetCode',value:'300+',label:'Problems solved',href:'https://leetcode.com/u/ShouryaW/',sub:'DSA · ALGORITHMS'},
-   {name:'Codeforces',value:'1200+',label:'Codeforces rating',href:'https://codeforces.com/profile/Kraven',sub:'COMPETITIVE PROGRAMMING'},
-   {name:'GitHub',value:'&lt;/&gt;',label:'Code, projects, and experiments',href:'https://github.com/shourya2006',sub:'BUILDING IN PUBLIC'},
-   {name:'CodeChef',value:'{ }',label:'More problems to work through',href:'https://www.codechef.com/users/algo_x_addict',sub:'PROBLEM SOLVING'}].map(p=><a href={p.href} key={p.name} className="ref-discover-card" target="_blank" rel="noreferrer" data-ref-reveal><span className="ref-discover-number">{p.value==='&lt;/&gt;'?'</>':p.value}</span><div><p className="font-mono text-xs text-muted-foreground">{p.sub}</p><h3>{p.name}<ArrowUpRight className="h-5 w-5"/></h3><p className="type-body-sm text-muted-foreground">{p.label}</p></div></a>)}</div></div></section>
+  <section className="section-dark section-y section-gutter" data-header-theme="dark"><div className="content-max"><span className="section-label mb-4">Beyond the build</span><h2 className="type-section section-heading-spacing" data-ref-reveal>Problem-solving <span className="opacity-50">habit</span></h2><AccountCards/></div></section>
   <div dangerouslySetInnerHTML={{__html:homeSections.services}}/>
  </main><ReferenceFooter/></div>
 }

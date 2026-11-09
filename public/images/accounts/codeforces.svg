@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="530" viewBox="0 0 1000 530" role="img" aria-labelledby="title desc">
+<title id="title">Codeforces rating history for Kraven</title>
+<desc id="desc">Official account data. Current rating 1309, peak 1352, 13 rated contests. Latest contest 06 Oct 2025.</desc>
+<defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".11"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>
+<rect width="1000" height="530" rx="24" fill="#111113"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="40" y="48" fill="#e9e9eb" font-size="25" font-weight="700">Codeforces</text>
+<text x="960" y="48" text-anchor="end" fill="#929298" font-size="18">@Kraven</text>
+<text x="40" y="118" fill="#f8f8fa" font-size="56" font-weight="700">1,309</text>
+<text x="42" y="148" fill="#929298" font-size="17" letter-spacing="1">CURRENT RATING</text>
+<text x="960" y="108" text-anchor="end" fill="#e1e1e5" font-size="23">Peak 1,352</text>
+<text x="960" y="141" text-anchor="end" fill="#929298" font-size="18">13 rated contests</text>
+<path d="M40 168H960" stroke="#ffffff18"/>
+<path d="M78 423.00H952" stroke="#ffffff13" stroke-dasharray="3 6"/>
+<text x="62" y="428.00" text-anchor="end" fill="#77777e" font-size="15">0</text>
+<path d="M78 365.75H952" stroke="#ffffff13" stroke-dasharray="3 6"/>
+<text x="62" y="370.75" text-anchor="end" fill="#77777e" font-size="15">400</text>
+<path d="M78 308.50H952" stroke="#ffffff13" stroke-dasharray="3 6"/>
+<text x="62" y="313.50" text-anchor="end" fill="#77777e" font-size="15">800</text>
+<path d="M78 251.25H952" stroke="#ffffff13" stroke-dasharray="3 6"/>
+<text x="62" y="256.25" text-anchor="end" fill="#77777e" font-size="15">1,200</text>
+<path d="M78 194.00H952" stroke="#ffffff13" stroke-dasharray="3 6"/>
+<text x="62" y="199.00" text-anchor="end" fill="#77777e" font-size="15">1,600</text>
+<path d="M78 423 L78.00 371.33 L126.71 331.26 L134.80 310.65 L153.77 298.91 L207.91 297.48 L310.69 261.27 L324.22 254.26 L329.63 249.25 L348.60 238.23 L353.98 231.78 L356.71 229.50 L417.97 236.08 L952.00 235.65 L952 423Z" fill="url(#area)"/>
+<polyline points="78.00,371.33 126.71,331.26 134.80,310.65 153.77,298.91 207.91,297.48 310.69,261.27 324.22,254.26 329.63,249.25 348.60,238.23 353.98,231.78 356.71,229.50 417.97,236.08 952.00,235.65" fill="none" stroke="#e6e6eb" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="78.00" cy="371.33" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="126.71" cy="331.26" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="134.80" cy="310.65" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="153.77" cy="298.91" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="207.91" cy="297.48" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="310.69" cy="261.27" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="324.22" cy="254.26" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="329.63" cy="249.25" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="348.60" cy="238.23" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="353.98" cy="231.78" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="356.71" cy="229.50" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="417.97" cy="236.08" r="3.5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<circle cx="952.00" cy="235.65" r="5" fill="#f5f5f8" stroke="#111113" stroke-width="2"/>
+<text x="78.00" y="454" text-anchor="start" fill="#85858d" font-size="15">Nov 2024</text>
+<text x="369.33" y="454" text-anchor="middle" fill="#85858d" font-size="15">Mar 2025</text>
+<text x="660.67" y="454" text-anchor="middle" fill="#85858d" font-size="15">Jun 2025</text>
+<text x="952.00" y="454" text-anchor="end" fill="#85858d" font-size="15">Oct 2025</text>
+<path d="M40 478H960" stroke="#ffffff13"/>
+<text x="40" y="508" fill="#77777f" font-size="14">OFFICIAL ACCOUNT DATA · 06 Oct 2025 latest contest</text>
+<text x="960" y="508" text-anchor="end" fill="#77777f" font-size="14">Fetched 09 Nov 2026</text>
+</g></svg>

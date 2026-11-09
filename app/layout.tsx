@@ -12,7 +12,7 @@ import IntroPreloader from '@/components/intro-preloader';
 import PageTransitions from '@/components/page-transitions';
 import ProjectModalProvider from '@/components/project-modal';
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shourya-bafna-portfolio.melodicllama2.chatgpt.site'),
+  metadataBase: new URL('https://portfoliomain-eosin.vercel.app'),
   title: { default: 'Shourya Bafna — Software & AI Engineer', template: '%s · Shourya Bafna' },
   description: 'Shourya Bafna builds full-stack applications, thoughtful AI systems, and practical machine learning. Explore selected projects, experience, and engineering decisions.',
   openGraph: { title: 'Shourya Bafna — Software & AI Engineer', description: 'Full-stack applications and applied AI. Projects, engineering experience, and the work behind them.', type: 'website' },

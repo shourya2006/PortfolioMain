@@ -1,0 +1,61 @@
+/* Motion values recovered from the shipped reference homepage bundle. */
+.ref-will-reveal{transform:translate(var(--ref-reveal-x,0),var(--ref-reveal-y,22px));transition:opacity var(--ref-reveal-duration,.65s) cubic-bezier(.22,1,.36,1) var(--ref-reveal-delay,0s),transform var(--ref-reveal-duration,.65s) cubic-bezier(.22,1,.36,1) var(--ref-reveal-delay,0s)}
+.ref-will-reveal.ref-in-view{transform:translate(0,0)}
+.ref-word-mask.ref-will-reveal{overflow:hidden;opacity:var(--ref-reveal-opacity,1);transform:none;transition:none;vertical-align:bottom}
+.ref-word-motion{display:inline-block;transform:translateY(105%);opacity:0;transition:transform var(--ref-reveal-duration,.5s) cubic-bezier(.22,1,.36,1) var(--ref-reveal-delay,.3s),opacity var(--ref-reveal-duration,.5s) ease var(--ref-reveal-delay,.3s)}
+.ref-word-mask.ref-in-view>.ref-word-motion{transform:translateY(0);opacity:1}
+.ref-word-mask:not(.ref-will-reveal)>.ref-word-motion{transform:none;opacity:1}
+.ref-expand-row{position:relative;outline:none;transition:border-color .2s}
+.ref-expand-row:focus-visible{outline:2px solid #ffffff70;outline-offset:5px}
+.ref-expand-row>:first-child{transition:transform .2s}
+.ref-expand-row:hover>:first-child,.ref-expand-row:focus-visible>:first-child{transform:translateX(4px)}
+.ref-education-row.ref-row-expanded{border-color:#ffffff59}
+.ref-row-details{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .35s cubic-bezier(.22,1,.36,1),opacity .35s cubic-bezier(.22,1,.36,1)}
+.ref-row-expanded>.ref-row-details{grid-template-rows:1fr;opacity:1}
+.ref-row-details-inner{min-height:0;overflow:hidden}
+.ref-row-details-content{padding-top:16px}
+.ref-row-bullets{margin-top:16px;display:grid;gap:8px;color:#ffffffd9}
+.ref-experience-details .ref-row-bullets{list-style:disc inside}
+.ref-portrait-default,.ref-education-portrait{transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+.ref-portrait-default{opacity:1;transform:scale(1);z-index:10}
+.ref-portrait-selected .ref-portrait-default{opacity:0;transform:scale(1.04)}
+.ref-education-portrait{opacity:0;transform:scale(1.04);z-index:5;pointer-events:none}
+.ref-education-portrait.is-active{opacity:1;transform:scale(1);z-index:11}
+[data-glow-card]:focus-visible .ref-card-glow{opacity:1}
+[data-glow-card]:focus-visible>div:last-child>span:last-child{background:white;color:black;border-color:white}
+[data-glow-card]:focus-visible>div:last-child>span:last-child>svg{transform:rotate(45deg)}
+.group:hover .ref-fan-1,.group:focus-visible .ref-fan-1{transform:translateY(-16px) scale(1.04)}
+.group:focus-visible .ref-fan-0{transform:translateX(-26%) rotate(-11deg)}
+.group:focus-visible .ref-fan-2{transform:translateX(28%) rotate(11deg)}
+.ref-carousel-image{opacity:0;transform:scale(1);transition:opacity .7s ease-out,transform .7s ease-out}
+.ref-carousel-image.is-active{opacity:1}
+.group:hover>.ref-carousel-image{transform:scale(1.03)}
+.group:focus-within>.ref-feature-panel{opacity:1;transform:translateY(0)}
+.group:focus-within>.ref-feature-hint{opacity:0}
+.ref-research-stat{height:7.25rem;min-height:7.25rem;position:relative;perspective:700px;padding-top:0}
+.ref-stat-frame{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;transform-origin:center;backface-visibility:hidden}
+.ref-stat-frame.is-entering{animation:ref-stat-enter .45s cubic-bezier(.22,1,.36,1) both}
+.ref-stat-frame.is-leaving{animation:ref-stat-leave .45s cubic-bezier(.22,1,.36,1) both}
+@keyframes ref-stat-enter{from{transform:rotateX(-80deg) translateY(18px);opacity:0}to{transform:rotateX(0) translateY(0);opacity:1}}
+@keyframes ref-stat-leave{from{transform:rotateX(0) translateY(0);opacity:1}to{transform:rotateX(80deg) translateY(-18px);opacity:0}}
+.ref-stat-progress .ref-stat-bar{animation:none;width:0}
+.ref-stat-progress .ref-stat-bar.is-past{width:100%;background:#ffffff80}
+.ref-stat-progress .ref-stat-bar.is-current{animation:ref-progress 2.8s linear forwards}
+.ref-stat-progress .ref-stat-bar.is-current.is-paused{animation:none;width:100%}
+.ref-service-preview{position:fixed;inset:0 auto auto 0;z-index:50;pointer-events:none;will-change:transform}
+.ref-service-preview>img{width:320px;height:224px;object-fit:cover;object-position:top left;border-radius:24px;box-shadow:0 20px 50px #0007;opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s}
+.ref-service-preview.is-visible>img{opacity:1;transform:scale(1)}
+#services a.group:focus-visible{background:#ffffff05}
+#services a.group:focus-visible h4{color:white}
+#services a.group:focus-visible p{color:#ffffffb3}
+#services a.group:focus-visible svg{transform:translateX(2px)}
+.ref-discover-card{transition:background .4s,border-color .4s,transform .7s ease-out}
+.ref-discover-card:focus-visible{background:#181818;border-color:#ffffff40}
+.ref-discover-card:focus-visible .ref-discover-number{color:white;transform:translateY(-5px)}
+.ref-discover-card h3>svg{transition:transform .3s}
+.ref-discover-card:hover h3>svg,.ref-discover-card:focus-visible h3>svg{transform:translate(2px,-2px)}
+.ref-discover-card:active{transform:scale(1.02)}
+@media(min-width:640px){.ref-education-details .ref-row-details-content{padding-left:40px}.ref-experience-details .ref-row-details-content{padding-left:16px}}
+@media(min-width:768px){.ref-experience-details .ref-row-details-content{padding-left:48px}}
+@media(min-width:1024px){.ref-discover-grid{display:flex}.ref-discover-card{flex:1 1 0;min-width:0;transition:flex-grow .7s ease-out,background .4s,border-color .4s}.ref-discover-card:hover,.ref-discover-card:focus-visible{flex-grow:3}}
+@media(prefers-reduced-motion:reduce){.ref-will-reveal,.ref-word-motion,.ref-stat-frame{transform:none!important;opacity:1!important}.ref-word-mask.ref-will-reveal{opacity:var(--ref-reveal-opacity,1)!important}.ref-service-preview{display:none}.ref-row-details,.ref-portrait-default,.ref-education-portrait,.ref-carousel-image,.ref-fan-image,.ref-discover-card,.ref-feature-panel{transition:none!important;animation:none!important}.ref-stat-progress .ref-stat-bar.is-current{animation:none;width:100%}.ref-stat-frame.is-leaving{opacity:0!important}}

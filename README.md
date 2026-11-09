@@ -27,3 +27,9 @@ npm run build
 - `components/reference-header.tsx` and `reference-footer.tsx`: navigation and contact
 
 No email address was supplied in the résumé, so contact links use the supplied LinkedIn profile.
+
+## Motion and interactions
+
+The reference motion was checked against its shipped components and REA browser captures. The portfolio includes the portrait/counting preloader, portrait-to-hero expansion, name reveal and hero handoff, rolling character labels, staggered mobile menu, category bottom sheet, masked scroll reveals, timeline accordions, portrait crossfades, image-fan hover, carousel controls, research metric flips, spring-driven service previews, screenshot lightboxes, and clipboard feedback. Keyboard controls and reduced-motion alternatives are included.
+
+The technology strip uses local SVG logos. Pinecone’s white lockup comes from its official brand assets; the other technology marks use Simple Icons. Education transitions reuse the supplied illustration because no separate school photos were provided.

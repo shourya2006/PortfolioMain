@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './reconstruction.css';
+import './home-motion.css';
+import './shared-motion.css';
+import './project-motion.css';
+import './intro-motion.css';
+import IntroPreloader from '@/components/intro-preloader';
+import PageTransitions from '@/components/page-transitions';
 export const metadata: Metadata = {
   metadataBase: new URL('https://shourya-bafna-portfolio.melodicllama2.chatgpt.site'),
   title: { default: 'Shourya Bafna — Software & AI Engineer', template: '%s · Shourya Bafna' },
@@ -9,5 +15,5 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
 };
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
-  return <html lang="en" className="__variable_e29fa9"><head><link rel="preload" href="/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body>{children}</body></html>;
+  return <html lang="en" className="__variable_e29fa9"><head><link rel="preload" href="/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body><IntroPreloader/><PageTransitions>{children}</PageTransitions></body></html>;
 }

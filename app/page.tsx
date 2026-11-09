@@ -1,0 +1,34 @@
+import Link from 'next/link';
+import ReferenceHeader,{ArrowUpRight} from '@/components/reference-header';
+import ReferenceFooter from '@/components/reference-footer';
+import HomeInteractions from '@/components/home-interactions';
+import HomeWork from '@/components/home-work';
+import {homeSections} from '@/lib/home-sections';
+
+function HeroTitle(){return <><span className="block">Building</span><span className="block">Full-Stack</span><span className="block">AI Systems.</span></>}
+export default function Home(){
+ return <div className="min-h-screen w-full"><a className="ref-skip" href="#main-content">Skip to content</a><HomeInteractions/><main id="main-content" className="relative w-full min-w-0 max-w-full">
+  <section data-header-theme="light" className="hero-section px-2 pb-2 pt-2 md:px-3 md:pb-3 md:pt-3"><div className="hero-shell min-h-[calc(100dvh-1rem)] md:min-h-[calc(100vh-1.5rem)]">
+   <div className="absolute inset-0 z-0 overflow-hidden"><img src="/images/shourya-hero.png" alt="Illustrated side profile of Shourya in neutral tones" className="ref-hero-image" fetchPriority="high"/><div className="ref-hero-mobile-shade absolute inset-0 md:hidden"/><div className="absolute inset-0 hidden bg-gradient-to-r from-surface/35 via-surface/10 to-transparent md:block"/><div className="absolute inset-0 hidden bg-gradient-to-t from-surface/25 via-transparent to-transparent md:block"/></div>
+   <div className="relative z-10 flex min-h-[inherit] flex-col px-6 pb-10 pt-5 sm:px-7 md:px-10 md:pb-10 md:pt-6 lg:px-14 lg:pb-12"><ReferenceHeader theme="light" embedded/>
+    <div className="min-h-[38dvh] flex-1 md:hidden" aria-hidden="true"/>
+    <div className="hidden flex-1 flex-col justify-center py-14 md:flex lg:py-16"><div className="mb-7 ref-hero-label"><span className="section-label-light">Software Engineer & AI Builder</span></div><h1 className="type-display max-w-[12ch] text-surface-foreground ref-hero-heading"><HeroTitle/></h1></div>
+    <div className="mt-auto flex flex-col gap-6 md:mt-0 md:flex-row md:items-end md:justify-between md:gap-12 md:pt-10">
+     <div className="space-y-4 md:hidden"><div className="ref-hero-label"><span className="section-label-light text-xs sm:text-sm">Software Engineer & AI Builder</span></div><p className="type-display max-w-[11ch] text-surface-foreground sm:max-w-[12ch] ref-hero-heading"><HeroTitle/></p></div>
+     <div className="-mx-1 flex gap-x-5 gap-y-2 overflow-x-auto pb-1 [scrollbar-width:none] md:mx-0 md:flex-wrap md:gap-x-10 md:overflow-visible ref-hero-skills">{['Backend','APIs','AI','Product UI'].map(x=><span key={x} className="shrink-0 font-mono text-[11px] tracking-[0.04em] text-surface-foreground/55 sm:text-xs">{x}</span>)}</div>
+     <div className="w-full shrink-0 md:max-w-[22rem] md:text-right xl:w-auto xl:max-w-none ref-hero-description"><p className="type-body-sm mb-5 max-w-md leading-relaxed text-surface-foreground/80 sm:type-body md:mb-6 md:max-w-none md:text-surface-foreground/75"><span className="xl:block xl:whitespace-nowrap">Software engineering student and full-stack developer,</span><span className="xl:block xl:whitespace-nowrap"> building practical AI and reliable applications.</span><span className="xl:block xl:whitespace-nowrap"> From visual workflows to retrieval-augmented systems.</span></p><div className="flex flex-col gap-3 xs:flex-row xs:flex-wrap md:justify-end"><Link className="btn-pill-dark w-full justify-center px-5 py-3 text-sm xs:w-auto xs:py-2.5" href="/portfolio"><span className="font-semibold">View projects</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></Link><Link className="btn-pill-outline-dark w-full justify-center px-5 py-3 text-sm xs:w-auto xs:py-2.5" href="/contact"><span className="font-semibold">Reach out</span></Link></div></div>
+    </div>
+   </div>
+  </div></section>
+  <section className="py-8 md:py-10" data-header-theme="dark" aria-label="Technologies I work with"><div className="flex items-center"><div className="section-gutter shrink-0 border-border pr-6 md:pr-10 lg:border-r lg:pr-12"><p className="flex max-w-[11rem] items-start gap-2.5 font-sans text-xs font-semibold uppercase leading-relaxed tracking-[0.14em] text-muted-foreground md:max-w-[13rem] md:text-sm"><span className="mt-0.5 shrink-0 text-foreground" aria-hidden="true">✳</span>Technologies I work with</p></div><div className="relative min-w-0 flex-1 overflow-hidden"><div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-background to-transparent md:w-16"/><div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-background to-transparent md:w-16"/><div className="logo-marquee flex w-max animate-logo-marquee items-center">{[0,1].map(n=><div key={n} aria-hidden={n===1} className="flex shrink-0 items-center gap-12 md:gap-16 lg:gap-20 ref-tech-strip">{['React','Next.js','Python','Node.js','TypeScript','PostgreSQL','Pinecone','Scikit-learn'].map(t=><span key={t} className="px-2 md:px-3">{t}</span>)}</div>)}</div></div></div></section>
+  <div dangerouslySetInnerHTML={{__html:homeSections.about}}/>
+  <HomeWork/>
+  <div dangerouslySetInnerHTML={{__html:homeSections.experience}}/>
+  <section className="section-dark section-y section-gutter" data-header-theme="dark"><div className="content-max"><span className="section-label mb-4">Beyond the build</span><h2 className="type-section section-heading-spacing" data-ref-reveal>Problem-solving <span className="opacity-50">habit</span></h2><div className="ref-discover-grid">{[
+   {name:'LeetCode',value:'300+',label:'Problems solved',href:'https://leetcode.com/u/ShouryaW/',sub:'DSA · ALGORITHMS'},
+   {name:'Codeforces',value:'1200+',label:'Codeforces rating',href:'https://codeforces.com/profile/Kraven',sub:'COMPETITIVE PROGRAMMING'},
+   {name:'GitHub',value:'&lt;/&gt;',label:'Code, projects, and experiments',href:'https://github.com/shourya2006',sub:'BUILDING IN PUBLIC'},
+   {name:'CodeChef',value:'{ }',label:'More problems to work through',href:'https://www.codechef.com/users/algo_x_addict',sub:'PROBLEM SOLVING'}].map(p=><a href={p.href} key={p.name} className="ref-discover-card" target="_blank" rel="noreferrer" data-ref-reveal><span className="ref-discover-number">{p.value==='&lt;/&gt;'?'</>':p.value}</span><div><p className="font-mono text-xs text-muted-foreground">{p.sub}</p><h3>{p.name}<ArrowUpRight className="h-5 w-5"/></h3><p className="type-body-sm text-muted-foreground">{p.label}</p></div></a>)}</div></div></section>
+  <div dangerouslySetInnerHTML={{__html:homeSections.services}}/>
+ </main><ReferenceFooter/></div>
+}
